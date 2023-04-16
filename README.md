@@ -11,6 +11,7 @@ Pedro Silva
     - PlayGame
     - PrintCurrentGame
     - ChangeLampStatus
+    - IsGameOver
 - Fez as enumerações
 - Organizou o código
 - Comentou o código
