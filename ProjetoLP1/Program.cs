@@ -41,6 +41,21 @@
                 If he desires for the main menu instructions for appear again*/
                 Console.WriteLine("2 - Instructions");
 
+                // Separation to make intructions easier to read
+                Console.WriteLine("------------------------------------------");
+
+                // Writes the instructions to play the game
+                Console.WriteLine("In this game there are 3 lamps initially turned off");
+                Console.WriteLine("There are also 3 buttons, first, second and third");
+                Console.WriteLine("First button turns on/off the first lamp");
+                Console.WriteLine("Second button turns on/off the first and second lamps");
+                Console.WriteLine("Third button turns on/off the second and third lamps");
+                Console.WriteLine("Win the game by turning all lamps on");
+                Console.WriteLine("You have a total of 6 button presses");
+
+                // Separation to make intructions easier to read
+                Console.WriteLine("------------------------------------------");
+
                 /* Writes a string that informs the player that he must click 3
                 if he desires to quit the game and exit the program*/
                 Console.WriteLine("3 - Quit");
