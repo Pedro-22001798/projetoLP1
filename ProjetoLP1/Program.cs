@@ -217,6 +217,10 @@
                 }
                 else if(lamp == 2)
                 {
+                    if(lamp1 == firstLampState.on)
+                        lamp1 = firstLampState.off;
+                    else
+                        lamp1 = firstLampState.on;
                     if(lamp2 == secondLampState.on)
                         lamp2 = secondLampState.off;
                     else
@@ -224,6 +228,10 @@
                 }
                 else if(lamp == 3)
                 {
+                    if(lamp2 == secondLampState.on)
+                        lamp2 = secondLampState.off;
+                    else
+                        lamp2 = secondLampState.on;
                     if(lamp3 == thirdLampState.on)
                         lamp3 = thirdLampState.off;
                     else
