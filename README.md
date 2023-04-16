@@ -168,3 +168,6 @@ related to whatever input was done
 
 ## Fluxograma:
 ![Fluxograma Projeto](Images/Fluxograma.png)
+
+## Referências:
+Para a realização deste projeto apenas foi utilizado o ChatGPT para rever código para saber se seria possível correr em linux ou não e para saber se o código lidava bem com algumas excepções de strings nulas.
