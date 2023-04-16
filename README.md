@@ -10,6 +10,10 @@ Pedro Silva
     - Main
     - PlayGame
     - PrintCurrentGame
+    - ChangeLampStatus
+- Fez as enumerações
+- Organizou o código
+- Comentou o código
 
 Nuno Matias
 - Fez o código dos métodos
