@@ -105,13 +105,11 @@ After every button input we once again call for our PrintCurrentGame method to p
 
 The PlayGame method than finishes with a win and lose condition for the player
 
-Win condition:
-If firstLamp, secondLamp and thirdLamp are all on ( == true ) than the player wins the game and a message is printed onto the console
-informing him that he won and how many moves ( numPlays ) he had left before losing
-
-Lose condition:
-If numPlays == 0 than the player has no more available moves and loses the game
-A message is than printed onto the console informing him of such
+Every time a play is made the code runs the method IsGameOver that returns "two" bools.
+If there are no plays left then the first one is true.
+If all of the lamps are on then the second one is true.
+The code checks if the win condition (all lamps are on) is triggered everytime a play is made.
+When there are no plays left the code returns a message saying that the player lost the game.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
 We than have our PrintCurrentGame method code and explanation
@@ -123,14 +121,14 @@ The first part of map constains a print onto the console "First Lamp - Second La
 can see the different lamps representation
 The rest of the method contains conditions for the lamps that control what the representation of their state looks like
 
-- If the firstLamp is on the console will print "     *O*     " below the firstLamp
-- If the firstLamp is off the console will print "      O      " below the firstlamp
+- If the firstLamp is on the console will print "     ✹💡✹     " below the firstLamp
+- If the firstLamp is off the console will print "      💡      " below the firstlamp
 
-- If the secondLamp is on the console will print "     *O*     " below the secondLamp
-- If the secondLamp is off the console will print "      O      " below the secondlamp
+- If the secondLamp is on the console will print "     ✹💡✹     " below the secondLamp
+- If the secondLamp is off the console will print "      💡      " below the secondlamp
 
-- If the thirdLamp is on the console will print "     *O*     " below the thirdLamp
-- If the thirdLamp is off the console will print "      O      " below the thirdlamp
+- If the thirdLamp is on the console will print "     ✹💡✹     " below the thirdLamp
+- If the thirdLamp is off the console will print "      💡      " below the thirdlamp
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Our ChooseOption method is next, quick reminder, this method checks the input of the user 
@@ -168,3 +166,6 @@ related to whatever input was done
 
 ## Fluxograma:
 ![Fluxograma Projeto](Images/Fluxograma.png)
+
+## Referências:
+Para a realização deste projeto apenas foi utilizado o ChatGPT para rever código para saber se seria possível correr em linux ou não e para saber se o código lidava bem com algumas excepções de strings nulas.
