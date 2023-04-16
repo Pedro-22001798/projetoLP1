@@ -167,4 +167,4 @@ related to whatever input was done
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Fluxograma:
-![fluxograma projeto](Floxograma.png)
+![fluxograma projeto](Fluxograma.png)
