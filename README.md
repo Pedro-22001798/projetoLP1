@@ -127,6 +127,7 @@ If the secondLamp is off ( False ) the console will print "      O      " below 
 
 If the thirdLamp is on ( True ) the console will print "     *O*     " below the thirdLamp
 If the thirdLamp is off ( False ) the console will print "      O      " below the thirdlamp
+
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Our ChooseOption method is next
 Quick reminder, this method checks the input of the user when it´s called in the the main menu during the Main method
@@ -142,6 +143,7 @@ If the input is different than 1, 2 or 3 and is also not Null or Empty, than the
 Third condition:
 If the input is valid, meaning it was 1, 2 or 3, the program will return True and the Main method will execute the function 
 related to whatever input was done
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 The last method of our code is the ChooseLamp method
 Quick reminder, this method checks the input of the user when it´s called in the PlayGame method
@@ -157,4 +159,5 @@ If the input is different than first, second or third and is also not Null or Em
 Third condition:
 If the input is valid, meaning it was first, second or third, the program will return True and the PlayGame method will execute the function 
 related to whatever input was done
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------
