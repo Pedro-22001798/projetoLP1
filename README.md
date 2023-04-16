@@ -29,9 +29,9 @@ Repositório = https://github.com/Pedro-22001798/projetoLP1
 
 - Our project solution called ( Projeto LP1 ), contains our Program called ( Program )
 
-Inside the coding of our program we start by declaring the class and initializing 3 variables
+Inside the coding of our program we start by declaring the class and initializing 5 variables
 
-    - a bool in False for every lamp so they start turned off
+    - an enum state for every lamp that starts with "off"
     - a int = 6 to represent the maximum amount of available plays
     - a int that stores how many plays we have left
    
@@ -87,14 +87,14 @@ If the user input is not valid than the code will continue to ask for a valid on
 Otherwise our PlayGame method will continue and check which button was inputted
 
 If the first button was the players choise, the firstLamp will switch it´s bool state
-If the firstLamp was on ( True ) it will turn off ( False ) and vice-versa
+If the firstLamp was on it will turn off and vice-versa
 
 If the second button was the players choise, the firstLamp and the secondLamp will switch their bool state
-If the firstLamp was on ( True ) it will turn off ( False ) and vice-versa
+If the firstLamp was on it will turn off and vice-versa
 The same will happen to the secondLamp
 
 If the third button was the players choise, the secondLamp and the thirdlamp will switch their bool state
-If the secondlamp was on ( True ) it will turn off ( False ) and vice-versa
+If the secondlamp was on it will turn off and vice-versa
 The same will happen to the thirdLamp
 
 Each time we exit this "else" and go back to the start of our "while" loop we subtract 1 ( -- ) from our numPlays variable
@@ -123,14 +123,14 @@ The first part of map constains a print onto the console "First Lamp - Second La
 can see the different lamps representation
 The rest of the method contains conditions for the lamps that control what the representation of their state looks like
 
-- If the firstLamp is on ( True ) the console will print "     *O*     " below the firstLamp
-- If the firstLamp is off ( False ) the console will print "      O      " below the firstlamp
+- If the firstLamp is on the console will print "     *O*     " below the firstLamp
+- If the firstLamp is off the console will print "      O      " below the firstlamp
 
-- If the secondLamp is on ( True ) the console will print "     *O*     " below the secondLamp
-- If the secondLamp is off ( False ) the console will print "      O      " below the secondlamp
+- If the secondLamp is on the console will print "     *O*     " below the secondLamp
+- If the secondLamp is off the console will print "      O      " below the secondlamp
 
-- If the thirdLamp is on ( True ) the console will print "     *O*     " below the thirdLamp
-- If the thirdLamp is off ( False ) the console will print "      O      " below the thirdlamp
+- If the thirdLamp is on the console will print "     *O*     " below the thirdLamp
+- If the thirdLamp is off the console will print "      O      " below the thirdlamp
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Our ChooseOption method is next, quick reminder, this method checks the input of the user 
@@ -154,14 +154,14 @@ when it´s called in the PlayGame method
 
 First condition:
 If the string input is Null (0) or Empty, the program prints
-"Invalid option. Choose between first, second or third." onto the console to inform the user of his invalid input ( return False )
+"Invalid option. Choose between 1, 2 or 3." onto the console to inform the user of his invalid input ( return False )
 
 Second condition:
-If the input is different than first, second or third and is also not Null or Empty, than the program prints
-"Invalid option. Choose between first, second or third." onto the console to inform the user of his invalid input ( return False )
+If the input is different than 1, 2 or 3 and is also not Null or Empty, than the program prints
+"Invalid option. Choose between 1, 2 or 3." onto the console to inform the user of his invalid input ( return False )
 
 Third condition:
-If the input is valid, meaning it was first, second or third, the program will return True and the PlayGame method will execute the function 
+If the input is valid, meaning it was 1, 2 or 3, the program will return True and the PlayGame method will execute the function 
 related to whatever input was done
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
