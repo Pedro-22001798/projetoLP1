@@ -106,8 +106,9 @@
                 }
             }
         }
-
+        /// <summary>
         // Our PlayGame method that controls the game
+        /// </summary>
         static void PlayGame()
         {
             /* Here we have a while lop that states that, while the number of
@@ -185,8 +186,9 @@
             }
         }
 
-        /* Method that controls the printing of the current game state onto the
-        console*/
+        /// <summary>
+        /// Method that controls the printing of the current game state onto theconsole
+        /// </summary>
         static void PrintCurrentGame()
         {
             // Writes a division to make it easier to separate
@@ -235,12 +237,20 @@
             Console.WriteLine("------------------------------------------");
         }
 
+        /// <summary>
+        /// Method that return the number of plays left.
+        /// </summary>
+        /// <returns> The number of plays left</returns>
         static int CheckAvailablePlays()
         {
             return numPlays;
         }
 
-        // Method that controls the options available on the main menu
+        /// <summary>
+        /// Method that checks if the option entered is valid or not.
+        /// </summary>
+        /// <param name = "newOption"> The option wrote. </param>
+        /// <returns> Returns true if the option wrote is valid and returns false if not</returns>
         static bool ChooseOption (string newOption)
         {
             // Condition if the input is null or empty
@@ -269,7 +279,11 @@
             }
         }
 
-        // Method that controls the buttons
+        /// <summary>
+        /// Method that controls if the lamp entered is valid or not.
+        /// </summary>
+        /// <param name = "newLamp"> The option wrote. </param>
+        /// <returns> Returns true if the option wrote is valid and returns false if not</returns>
         static bool ChooseLamp (string newLamp)
         {
             // Condition if input is null or empty
@@ -301,6 +315,10 @@
             }
         }
 
+        /// <summary>
+        /// Method that controls if the game is over or not.
+        /// </summary>
+        /// <returns> Returns first bool true if there are no plays left and returns the second bool true if the player won the game.</returns>
         static (bool,bool) IsGameOver()
         {
             if(numPlays == 0)
