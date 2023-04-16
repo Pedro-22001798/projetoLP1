@@ -121,14 +121,14 @@ The first part of map constains a print onto the console "First Lamp - Second La
 can see the different lamps representation
 The rest of the method contains conditions for the lamps that control what the representation of their state looks like
 
-- If the firstLamp is on the console will print "     *O*     " below the firstLamp
-- If the firstLamp is off the console will print "      O      " below the firstlamp
+- If the firstLamp is on the console will print "     ✹💡✹     " below the firstLamp
+- If the firstLamp is off the console will print "      💡      " below the firstlamp
 
-- If the secondLamp is on the console will print "     *O*     " below the secondLamp
-- If the secondLamp is off the console will print "      O      " below the secondlamp
+- If the secondLamp is on the console will print "     ✹💡✹     " below the secondLamp
+- If the secondLamp is off the console will print "      💡      " below the secondlamp
 
-- If the thirdLamp is on the console will print "     *O*     " below the thirdLamp
-- If the thirdLamp is off the console will print "      O      " below the thirdlamp
+- If the thirdLamp is on the console will print "     ✹💡✹     " below the thirdLamp
+- If the thirdLamp is off the console will print "      💡      " below the thirdlamp
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Our ChooseOption method is next, quick reminder, this method checks the input of the user 
