@@ -165,3 +165,6 @@ If the input is valid, meaning it was 1, 2 or 3, the program will return True an
 related to whatever input was done
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Fluxograma:
+![fluxograma projeto](Floxograma.png)
