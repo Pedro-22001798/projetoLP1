@@ -64,8 +64,15 @@
                 // This is where the program will go in case the option is valid
                 else
                 {
+                    int selectedOption;
+                    bool isNumeric = int.TryParse(option, out selectedOption);
+                    if(!isNumeric)
+                    {
+                        Console.WriteLine("Number not valid.");
+                        continue;
+                    }
                     // Here we have what happens if the player enters option 1
-                    if(option == "1")
+                    if(selectedOption == 1)
                     {
                         // The warning message below will be printed onto the console
                         Console.WriteLine("The game is starting. Good luck!");
@@ -80,12 +87,12 @@
                         break;                        
                     }
                     // Here we have what happens if the player enters option 2
-                    else if(option == "2")
+                    else if(selectedOption == 2)
                     {
                         /* The instructions from the main menu will be printed
                         on the console*/
                         // Writes the instructions to play the game
-                        Console.WriteLine("-----------------------------------------------");
+                        Console.WriteLine("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
                         Console.WriteLine("In this game there are 3 lamps initially turned off");
                         Console.WriteLine("There are also 3 buttons, first, second and third");
                         Console.WriteLine("First button turns on/off the first lamp");
@@ -93,10 +100,10 @@
                         Console.WriteLine("Third button turns on/off the second and third lamps");
                         Console.WriteLine("Win the game by turning all lamps on");
                         Console.WriteLine("You have a total of 6 button presses");
-                        Console.WriteLine("-----------------------------------------------");
+                        Console.WriteLine("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
                     }
                     // Here we have what happens if the player enter option 3
-                    else if(option == "3")
+                    else if(selectedOption == 3)
                     {
                         // The message below will be printed onto the console
                         Console.WriteLine("Goodbye!");
@@ -119,7 +126,7 @@
             while(numPlays > 0)
             {
                 // Here we ask the player which button he wants to press
-                Console.WriteLine("Type,first,second or third to press the respective button");
+                Console.WriteLine("Type,1,2 or 3 to press the respective button");
 
                 // Reads player´s input
                 string button = Console.ReadLine();
@@ -134,15 +141,22 @@
                 // This runs if the input was a valid button
                 else
                 {
+                    int selectedLamp;
+                    bool isNumeric = int.TryParse(button, out selectedLamp);
+                    if(!isNumeric)
+                    {
+                        Console.WriteLine("Invalid option.");
+                        continue;
+                    }
                     // This runs if user inputs the first button
-                    if(button.ToLower() == "first")
+                    if(selectedLamp == 1)
                     {
                         /* The first lamp will turn on if it was turned off
                         or will turn off if it was turned one*/
                         firstLamp = !firstLamp;
                     }
                     // This runs if user inputs the second button
-                    else if(button.ToLower() == "second")
+                    else if(selectedLamp == 2)
                     {
                         /* The first lamp will turn on if it was turned off
                         or it will turn off if it was turned on
@@ -152,7 +166,7 @@
                         secondLamp = !secondLamp;
                     }
                     // This runs if user inputs the third button
-                    else if(button.ToLower() == "third")
+                    else if(selectedLamp == 3)
                     {
                         /* The second lamp will turn on if it was turned off
                         or it will turn off if it was turned on
@@ -192,7 +206,7 @@
         static void PrintCurrentGame()
         {
             // Writes a division to make it easier to separate
-            Console.WriteLine("------------------------------------------");
+            Console.WriteLine("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
             // Writes the 3 different lamps and their position
             Console.WriteLine("First Lamp - Second Lamp - Third Lamp");
 
@@ -234,7 +248,7 @@
             }
             // Prints to create a separation and help better visualize the map
             Console.WriteLine("");
-            Console.WriteLine("------------------------------------------");
+            Console.WriteLine("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
         }
 
         /// <summary>
@@ -298,7 +312,7 @@
             }
             /* Condition if input is different than first, second or third but
             is also not null or empty*/
-            else if(newLamp != "first" && newLamp != "second" && newLamp != "third")
+            else if(newLamp != "1" && newLamp != "2" && newLamp != "3")
             {
                 /* Prints the message telling the player his input is not valid
                 and to choose between first, second or third*/
