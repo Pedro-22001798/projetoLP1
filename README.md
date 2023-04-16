@@ -4,15 +4,15 @@ Pedro Silva
 Nuno Matias 22104821
 
 Pedro Silva
-- criou o repositório
-- criou as varáveis 
-- fez o código dos métodos
+- Criou o repositório
+- Criou as variáveis 
+- Fez o código dos métodos
     - Main
     - PlayGame
     - PrintCurrentGame
 
 Nuno Matias
-- fez o código dos métodos
+- Fez o código dos métodos
      - ChooseLamp
      - ChooseOption
 
