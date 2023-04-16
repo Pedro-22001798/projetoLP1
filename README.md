@@ -105,13 +105,11 @@ After every button input we once again call for our PrintCurrentGame method to p
 
 The PlayGame method than finishes with a win and lose condition for the player
 
-Win condition:
-If firstLamp, secondLamp and thirdLamp are all on ( == true ) than the player wins the game and a message is printed onto the console
-informing him that he won and how many moves ( numPlays ) he had left before losing
-
-Lose condition:
-If numPlays == 0 than the player has no more available moves and loses the game
-A message is than printed onto the console informing him of such
+Every time a play is made the code runs the method IsGameOver that returns "two" bools.
+If there are no plays left then the first one is true.
+If all of the lamps are on then the second one is true.
+The code checks if the win condition (all lamps are on) is triggered everytime a play is made.
+When there are no plays left the code returns a message saying that the player lost the game.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
 We than have our PrintCurrentGame method code and explanation
