@@ -41,21 +41,6 @@
                 If he desires for the main menu instructions for appear again*/
                 Console.WriteLine("2 - Instructions");
 
-                // Separation to make intructions easier to read
-                Console.WriteLine("------------------------------------------");
-
-                // Writes the instructions to play the game
-                Console.WriteLine("In this game there are 3 lamps initially turned off");
-                Console.WriteLine("There are also 3 buttons, first, second and third");
-                Console.WriteLine("First button turns on/off the first lamp");
-                Console.WriteLine("Second button turns on/off the first and second lamps");
-                Console.WriteLine("Third button turns on/off the second and third lamps");
-                Console.WriteLine("Win the game by turning all lamps on");
-                Console.WriteLine("You have a total of 6 button presses");
-
-                // Separation to make intructions easier to read
-                Console.WriteLine("------------------------------------------");
-
                 /* Writes a string that informs the player that he must click 3
                 if he desires to quit the game and exit the program*/
                 Console.WriteLine("3 - Quit");
@@ -66,6 +51,7 @@
 
                 // Reads the input of the user
                 string option = Console.ReadLine();
+                option = option.Replace(" ","");
 
                 /* Here we have our method that makes sure that the player entered
                 a valid option*/
@@ -98,7 +84,16 @@
                     {
                         /* The instructions from the main menu will be printed
                         on the console*/
-                        Console.WriteLine("Instructions");
+                        // Writes the instructions to play the game
+                        Console.WriteLine("-----------------------------------------------");
+                        Console.WriteLine("In this game there are 3 lamps initially turned off");
+                        Console.WriteLine("There are also 3 buttons, first, second and third");
+                        Console.WriteLine("First button turns on/off the first lamp");
+                        Console.WriteLine("Second button turns on/off the first and second lamps");
+                        Console.WriteLine("Third button turns on/off the second and third lamps");
+                        Console.WriteLine("Win the game by turning all lamps on");
+                        Console.WriteLine("You have a total of 6 button presses");
+                        Console.WriteLine("-----------------------------------------------");
                     }
                     // Here we have what happens if the player enter option 3
                     else if(option == "3")
@@ -119,6 +114,7 @@
             moves available to the player is bigger than 0, the code below
             will be active
             Quick reminder that the player starts the game with 6 moves*/
+            var gameStatus = IsGameOver();
             while(numPlays > 0)
             {
                 // Here we ask the player which button he wants to press
@@ -126,6 +122,7 @@
 
                 // Reads player´s input
                 string button = Console.ReadLine();
+                button = button.Replace(" ","");
 
                 // Our ChooseLamp method that controls the buttons
                 if(!ChooseLamp(button))
@@ -169,23 +166,22 @@
                     /* This function prints the current map of the game
                     with the different lamps as well as which one are turned
                     on or off*/ 
-                    PrintCurrentGame();                    
+                    PrintCurrentGame();
+                    Console.WriteLine($"You have {CheckAvailablePlays()} plays left.");               
                 }
                 /* Here we have the game win condition where if all 3 lamps
                 are turned on (True), the player wins the game*/
-                if(firstLamp == true && secondLamp == true && thirdLamp == true)
+                gameStatus = IsGameOver();
+                if(gameStatus.Item2)
                 {
-                    /* Write a message telling the player he won as well as 
-                    how many moves he still had left before he lost*/
-                    Console.WriteLine("You Won with " + numPlays + " moves left!");
+                    Console.WriteLine("You have won the game!");
                     break;
                 }
             }
             // This runs if the player has used all his 6 moves and has not won yet
-            if(numPlays == 0)
+            if(gameStatus.Item1 && !gameStatus.Item2)
             {
-                // Writes a message telling the player that he lost
-                Console.WriteLine("You lost the game.");
+                Console.WriteLine("You have lost the game.");
             }
         }
 
@@ -202,41 +198,46 @@
             if(firstLamp)
             {
                 // Prints *0* to inform that first lamp is on (True)
-                Console.Write("     *O*     ");
+                Console.Write("     ✹💡✹     ");
             }
             // Condition if first lamp is off
             else
             {
                 // Prints 0 to inform that first lamp is off (False)
-                Console.Write("      O      ");
+                Console.Write("      💡      ");
             }
             // Condition if second lamp is on
             if(secondLamp)
             {
                 // Prints *0* to inform that second lamp is on(True)
-                Console.Write("     *O*     ");
+                Console.Write("     ✹💡✹     ");
             }
             // Condition if second lamp is off
             else
             {
                 // Prints 0 to inform that second lamp is off(False)
-                Console.Write("      O      ");
+                Console.Write("      💡      ");
             }
             // Condition if third lamp is on
             if(thirdLamp)
             {
                 // Prints *0* to inform that third lamp is on (True)
-                Console.Write("     *O*     ");
+                Console.Write("     ✹💡✹     ");
             }
             // Condition if third lamp is off
             else
             {
                 // Prints 0 to inform that third lamp if off(False)
-                Console.Write("      O      ");
+                Console.Write("      💡      ");
             }
             // Prints to create a separation and help better visualize the map
             Console.WriteLine("");
             Console.WriteLine("------------------------------------------");
+        }
+
+        static int CheckAvailablePlays()
+        {
+            return numPlays;
         }
 
         // Method that controls the options available on the main menu
@@ -297,6 +298,32 @@
             {
                 // Returns a valid option and executes the respective action
                 return true;
+            }
+        }
+
+        static (bool,bool) IsGameOver()
+        {
+            if(numPlays == 0)
+            {
+                if(firstLamp == true && secondLamp == true && thirdLamp == true)
+                {
+                    return (true,true);   
+                }
+                else
+                {
+                    return (true,false);
+                }
+            }
+            else
+            {
+                if(firstLamp == true && secondLamp == true && thirdLamp == true)
+                {
+                    return (false,true);   
+                }
+                else
+                {
+                    return (false,false);
+                }                
             }
         }
     }
